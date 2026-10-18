@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sora);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-text: var(--brand-text);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-navy: var(--navy);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ * Valtrex Markets palette: deep navy surfaces with a single amber accent.
+ * Up/down colours are semantic (not brand) and always paired with a sign or icon.
+ */
+:root {
+  color-scheme: light;
+  --navy: oklch(0.2 0.045 262);
+  --background: oklch(0.985 0.004 255);
+  --foreground: oklch(0.21 0.04 262);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.04 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.04 262);
+  --primary: oklch(0.82 0.15 78);
+  --primary-foreground: oklch(0.2 0.045 262);
+  --secondary: oklch(0.955 0.01 255);
+  --secondary-foreground: oklch(0.21 0.04 262);
+  --muted: oklch(0.955 0.01 255);
+  --muted-foreground: oklch(0.45 0.03 258);
+  --accent: oklch(0.95 0.012 255);
+  --accent-foreground: oklch(0.21 0.04 262);
+  --destructive: oklch(0.52 0.2 27);
+  --border: oklch(0.9 0.012 255);
+  --input: oklch(0.84 0.015 255);
+  --ring: oklch(0.6 0.14 70);
+  --brand: oklch(0.82 0.15 78);
+  --brand-text: oklch(0.5 0.115 62);
+  --positive: oklch(0.5 0.13 152);
+  --negative: oklch(0.52 0.19 27);
+  --grid-line: oklch(0.21 0.04 262 / 6%);
+  --radius: 0.75rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.17 0.035 262);
+  --foreground: oklch(0.97 0.008 255);
+  --card: oklch(0.21 0.04 262);
+  --card-foreground: oklch(0.97 0.008 255);
+  --popover: oklch(0.21 0.04 262);
+  --popover-foreground: oklch(0.97 0.008 255);
+  --primary: oklch(0.84 0.15 80);
+  --primary-foreground: oklch(0.2 0.045 262);
+  --secondary: oklch(0.25 0.04 262);
+  --secondary-foreground: oklch(0.97 0.008 255);
+  --muted: oklch(0.24 0.04 262);
+  --muted-foreground: oklch(0.76 0.025 258);
+  --accent: oklch(0.26 0.042 262);
+  --accent-foreground: oklch(0.97 0.008 255);
+  --destructive: oklch(0.72 0.17 25);
+  --border: oklch(1 0 0 / 11%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.84 0.15 80);
+  --brand: oklch(0.84 0.15 80);
+  --brand-text: oklch(0.86 0.13 82);
+  --positive: oklch(0.8 0.15 155);
+  --negative: oklch(0.74 0.16 25);
+  --grid-line: oklch(1 0 0 / 5%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-smooth font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight text-balance;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--brand) 40%, transparent);
+  }
+}
+
+@layer utilities {
+  /* Faint grid used behind hero areas. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .mask-fade-b {
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 40%, transparent 100%);
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
