@@ -10,11 +10,11 @@ function normaliseUrl(value: string | undefined, fallback: string): string {
 }
 
 export const siteConfig = {
-  name: "Valtrex Markets",
-  shortName: "Valtrex",
+  name: "Emmy Capital",
+  shortName: "Emmy",
   tagline: "A fictional forex broker website, built as a portfolio demo.",
   description:
-    "Valtrex Markets is a fictional forex broker demo website by Emmanuel Kelvin. Simulated prices, working calculators and educational guides. No real trading, accounts or deposits.",
+    "Emmy Capital is a fictional forex broker demo website by Emmanuel Kelvin. Simulated prices, working calculators and educational guides. No real trading, accounts or deposits.",
   url: normaliseUrl(process.env.NEXT_PUBLIC_SITE_URL, "http://localhost:3000"),
   portfolioUrl: normaliseUrl(
     process.env.NEXT_PUBLIC_PORTFOLIO_URL,

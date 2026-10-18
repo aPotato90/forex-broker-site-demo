@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Markets (simulated prices)",
   description:
-    "Browse simulated prices for major forex pairs, metals and indices on the Valtrex Markets demo. Sort, filter and pause updates. Not real market data.",
+    "Browse simulated prices for major forex pairs, metals and indices on the Emmy Capital demo. Sort, filter and pause updates. Not real market data.",
   path: "/markets",
 });
 

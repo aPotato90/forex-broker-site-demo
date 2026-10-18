@@ -1,4 +1,4 @@
-export const THEME_STORAGE_KEY = "valtrex-theme";
+export const THEME_STORAGE_KEY = "emmy-capital-theme";
 
 /**
  * Runs synchronously in <head> before first paint: applies the saved theme (or the system

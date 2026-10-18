@@ -66,7 +66,7 @@ export function WebTerminalMockup() {
           <span className="size-2.5 rounded-full bg-brand/80" />
           <span className="size-2.5 rounded-full bg-positive/80" />
           <span className="ml-3 truncate rounded-md bg-muted px-3 py-0.5 font-mono text-[0.65rem] text-muted-foreground">
-            web-terminal.valtrex.example / demo
+            web-terminal.emmy-capital.example / demo
           </span>
         </div>
         <div className="grid text-xs md:grid-cols-[180px_1fr_200px]">
@@ -155,7 +155,7 @@ export function DesktopMockup() {
     >
       <div className="dark overflow-hidden rounded-xl border bg-background text-foreground shadow-xl shadow-black/20">
         <div className="flex items-center justify-between border-b px-3 py-2 text-[0.65rem] text-muted-foreground">
-          <span>Valtrex Desktop (concept)</span>
+          <span>Emmy Capital Desktop (concept)</span>
           <span>— ▢ ✕</span>
         </div>
         <div className="grid grid-cols-2 gap-px bg-border">

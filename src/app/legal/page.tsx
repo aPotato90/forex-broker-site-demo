@@ -7,7 +7,7 @@ import { DEMO_NOTICE, RISK_WARNING, siteConfig } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Legal: disclaimer, risk warning and privacy",
   description:
-    "Demo disclaimer, general risk warning and a plain privacy statement for the fictional Valtrex Markets website: it collects nothing.",
+    "Demo disclaimer, general risk warning and a plain privacy statement for the fictional Emmy Capital website: it collects nothing.",
   path: "/legal",
 });
 
@@ -26,7 +26,7 @@ export default function LegalPage() {
           </h2>
           <p className="font-medium">{DEMO_NOTICE}</p>
           <p>
-            Valtrex Markets is a fictional brand created by {siteConfig.author} for a software
+            Emmy Capital is a fictional brand created by {siteConfig.author} for a software
             development portfolio. It is not a company, broker, dealer, adviser or financial
             institution, and it is not authorised, licensed or registered by any regulator.
           </p>

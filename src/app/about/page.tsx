@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "About this demo",
   description:
-    "Why Valtrex Markets exists: a fictional forex broker website built by full-stack developer Emmanuel Kelvin to demonstrate design, accessibility and engineering.",
+    "Why Emmy Capital exists: a fictional forex broker website built by full-stack developer Emmanuel Kelvin to demonstrate design, accessibility and engineering.",
   path: "/about",
 });
 
@@ -31,9 +31,9 @@ export default function AboutPage() {
         title="A broker website with no broker behind it"
         description={
           <>
-            Valtrex Markets is a portfolio project by {siteConfig.author}, a full-stack developer.
-            The brand, products and figures are invented so the work can be shown without pretending
-            to be, or resembling, any real firm.
+            Emmy Capital is a portfolio project by {siteConfig.author}, a full-stack developer. The
+            brand, products and figures are invented so the work can be shown without pretending to
+            be, or resembling, any real firm.
           </>
         }
       />

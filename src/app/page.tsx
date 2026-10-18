@@ -104,8 +104,8 @@ export default function HomePage() {
               Global markets, <span className="text-brand-text">simulated</span> end to end.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-pretty text-muted-foreground">
-              Valtrex Markets is an invented forex broker that shows what a modern trading website
-              can feel like: live-looking simulated prices, working risk calculators and clear
+              Emmy Capital is an invented forex broker that shows what a modern trading website can
+              feel like: live-looking simulated prices, working risk calculators and clear
               education. No real money, accounts or trading.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

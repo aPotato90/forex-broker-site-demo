@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# Valtrex Markets — fictional broker demo
+# Emmy Capital — fictional broker demo
 
 This repository is a **portfolio demo** by Emmanuel Kelvin (full-stack developer). It looks like a
 forex broker marketing site, but the broker is **entirely fictional**. Nothing here is real: there
@@ -8,7 +8,7 @@ is no trading, no deposits, no accounts, no regulation and no market data.
 
 ## Non-negotiable content rules
 
-- **Brand:** the only brand name is the invented "Valtrex Markets". Never use a real broker's name,
+- **Brand:** the only brand name is the invented "Emmy Capital". Never use a real broker's name,
   logo, slogan, colour scheme or copy. Do not use "Meridian Capital Markets" or any name that
   resembles a real firm.
 - **Demo banner:** every page shows "Demo website. Not a real broker. No real trading or deposits."

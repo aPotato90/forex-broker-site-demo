@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Open a demo account",
   description:
-    "Try the three-step demo account sign-up for the fictional Valtrex Markets. Inputs are validated in the browser; nothing is submitted or stored.",
+    "Try the three-step demo account sign-up for the fictional Emmy Capital. Inputs are validated in the browser; nothing is submitted or stored.",
   path: "/open-account",
 });
 

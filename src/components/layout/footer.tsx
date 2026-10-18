@@ -11,7 +11,7 @@ export function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5 font-heading text-lg font-semibold">
               <LogoMark />
-              Valtrex Markets
+              Emmy Capital
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               A fictional broker brand created for a portfolio project. There is no company, no
@@ -52,7 +52,7 @@ export function Footer() {
         <div className="mt-12 space-y-3 border-t pt-8 text-xs leading-relaxed text-muted-foreground">
           <p>
             <strong className="font-semibold text-foreground">Demo notice:</strong> {DEMO_NOTICE}{" "}
-            Valtrex Markets is invented. All prices are simulated in your browser, all figures are
+            Emmy Capital is invented. All prices are simulated in your browser, all figures are
             illustrative, and no form on this site sends or stores data.
           </p>
           <p>

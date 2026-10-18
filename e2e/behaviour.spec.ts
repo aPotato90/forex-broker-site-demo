@@ -250,11 +250,11 @@ test.describe("calendar", () => {
 test.describe("navigation and FAQ", () => {
   test("FAQ accordion works with the keyboard", async ({ page }) => {
     await page.goto("/");
-    const trigger = page.getByRole("button", { name: "Is Valtrex Markets a real broker?" });
+    const trigger = page.getByRole("button", { name: "Is Emmy Capital a real broker?" });
     await trigger.focus();
     await page.keyboard.press("Enter");
     await expect(trigger).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByText(/Valtrex Markets is a fictional brand created/)).toBeVisible();
+    await expect(page.getByText(/Emmy Capital is a fictional brand created/)).toBeVisible();
     await page.keyboard.press("Space");
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
   });

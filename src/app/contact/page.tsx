@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Contact (demo form)",
   description:
-    "A demo contact form for the fictional Valtrex Markets that validates but never sends. Real enquiries go to Emmanuel Kelvin's portfolio.",
+    "A demo contact form for the fictional Emmy Capital that validates but never sends. Real enquiries go to Emmanuel Kelvin's portfolio.",
   path: "/contact",
 });
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
             Real enquiries
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Valtrex Markets has no support team because it does not exist. If you would like to talk
+            Emmy Capital has no support team because it does not exist. If you would like to talk
             about this project or hire its developer, please use the contact details on the
             portfolio.
           </p>
