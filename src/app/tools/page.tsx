@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Forex calculators (educational)",
   description:
-    "Educational position size, pip value, margin and profit/loss calculators with formulas and assumptions shown. Part of the fictional Valtrex Markets demo.",
+    "Educational position size, pip value, margin and profit/loss calculators with formulas and assumptions shown. Part of the fictional Emmy Capital demo.",
   path: "/tools",
 });
 

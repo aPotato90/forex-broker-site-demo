@@ -1,6 +1,7 @@
 {
   "name": "forex-broker-site-demo",
   "version": "0.1.0",
+  "description": "Emmy Capital: a fictional forex broker marketing website built as a portfolio demo by Emmanuel Kelvin. Simulated prices only; no real trading, accounts or deposits.",
   "private": true,
   "scripts": {
     "dev": "next dev",

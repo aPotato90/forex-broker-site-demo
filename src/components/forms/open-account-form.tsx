@@ -165,7 +165,7 @@ export function OpenAccountForm() {
         </h2>
         <p className="mx-auto mt-3 max-w-md text-muted-foreground">
           Your answers only ever existed in this browser tab and have now been discarded. No account
-          was created, because Valtrex Markets does not exist.
+          was created, because Emmy Capital does not exist.
         </p>
         <Button type="button" size="lg" variant="outline" className="mt-8" onClick={restart}>
           Start again

@@ -2,9 +2,9 @@ import type { FaqItem } from "@/components/site/faq";
 
 export const HOME_FAQ: readonly FaqItem[] = [
   {
-    question: "Is Valtrex Markets a real broker?",
+    question: "Is Emmy Capital a real broker?",
     answer:
-      "No. Valtrex Markets is a fictional brand created for a web development portfolio. There is no company, no licence, no trading and no way to deposit money. Every page is a demonstration of design and engineering.",
+      "No. Emmy Capital is a fictional brand created for a web development portfolio. There is no company, no licence, no trading and no way to deposit money. Every page is a demonstration of design and engineering.",
   },
   {
     question: "Where do the prices come from?",

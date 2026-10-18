@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Page not found",
-  description: "This page does not exist on the Valtrex Markets demo.",
+  description: "This page does not exist on the Emmy Capital demo.",
   robots: { index: false },
 };
 

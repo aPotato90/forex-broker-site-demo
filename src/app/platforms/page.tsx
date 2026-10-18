@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Platforms (illustrative mockups)",
   description:
-    "Web, desktop and mobile trading platform concepts for the fictional Valtrex Markets, drawn in code with simulated data. Original mockups, not working software.",
+    "Web, desktop and mobile trading platform concepts for the fictional Emmy Capital, drawn in code with simulated data. Original mockups, not working software.",
   path: "/platforms",
 });
 

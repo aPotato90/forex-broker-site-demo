@@ -1,9 +1,9 @@
 # forex-broker-site-demo
 
-**Valtrex Markets** is a polished marketing website for a forex broker that **does not exist**.
+**Emmy Capital** is a polished marketing website for a forex broker that **does not exist**.
 It is a portfolio demo by **Emmanuel Kelvin**, full-stack developer.
 
-> **Disclaimer:** Demo website. Not a real broker. No real trading or deposits. Valtrex Markets is
+> **Disclaimer:** Demo website. Not a real broker. No real trading or deposits. Emmy Capital is
 > an invented brand with no company, licence or regulator behind it. Every price is simulated in
 > your browser, every spread, deposit and leverage figure is illustrative, calendar events are
 > fictional sample data, and no form sends or stores anything. Trading leveraged products carries a
@@ -11,7 +11,7 @@ It is a portfolio demo by **Emmanuel Kelvin**, full-stack developer.
 
 <!-- Screenshot placeholder: replace with your own capture if you restyle the site. -->
 
-![Valtrex Markets home page (fictional demo)](docs/screenshots/home-desktop-dark.jpg)
+![Emmy Capital home page (fictional demo)](docs/screenshots/home-desktop-dark.jpg)
 
 More captures (light/dark, 375/768/1280px) live in [`docs/screenshots`](docs/screenshots).
 

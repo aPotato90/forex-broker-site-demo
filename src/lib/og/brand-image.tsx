@@ -1,11 +1,12 @@
 import { ImageResponse } from "next/og";
+import { MARK_C_PATH, MARK_E_PATH, MARK_STROKE_WIDTH, MARK_VIEWBOX } from "@/lib/brand-mark";
 
 export const OG_SIZE = { width: 1200, height: 630 };
 
 const NAVY = "#0b1222";
 const AMBER = "#f5b83d";
 
-/** Mark used by the favicon, apple icon and social image. Plain shapes, no fonts or fetches. */
+/** "EC" mark used by the favicon, apple icon and social image. Plain strokes, no fonts or fetches. */
 export function markElement(size: number) {
   return (
     <div
@@ -19,20 +20,20 @@ export function markElement(size: number) {
         justifyContent: "center",
       }}
     >
-      <svg width={size * 0.8} height={size * 0.8} viewBox="0 0 32 32">
+      <svg width={size * 0.8} height={size * 0.8} viewBox={MARK_VIEWBOX}>
         <path
-          d="M8 9.5 14.6 23h2.8L24 9.5"
+          d={MARK_E_PATH}
           fill="none"
           stroke="#ffffff"
-          strokeWidth="3"
+          strokeWidth={MARK_STROKE_WIDTH}
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M19.5 17.5 22.4 14.6 25 17"
+          d={MARK_C_PATH}
           fill="none"
           stroke={AMBER}
-          strokeWidth="2.2"
+          strokeWidth={MARK_STROKE_WIDTH}
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -63,7 +64,7 @@ export function brandImage({ eyebrow, title }: { eyebrow: string; title: string 
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
         {markElement(64)}
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <span style={{ fontSize: 34, fontWeight: 700 }}>Valtrex Markets</span>
+          <span style={{ fontSize: 34, fontWeight: 700 }}>Emmy Capital</span>
           <span style={{ fontSize: 18, letterSpacing: 4, color: "#94a3b8" }}>FICTIONAL DEMO</span>
         </div>
       </div>

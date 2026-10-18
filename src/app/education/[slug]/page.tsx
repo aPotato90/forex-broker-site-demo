@@ -121,7 +121,7 @@ export default async function ArticlePage({ params }: PageProps<"/education/[slu
 
         <RiskWarning className="mt-12" />
         <p className="mt-4 text-sm text-muted-foreground">
-          Written for the Valtrex Markets demo as general education. It is not financial advice.
+          Written for the Emmy Capital demo as general education. It is not financial advice.
         </p>
 
         <nav aria-label="Next guide" className="mt-10 border-t pt-8">

@@ -30,7 +30,7 @@ export function MobileNav({ items }: { items: readonly NavItem[] }) {
       </SheetTrigger>
       <SheetContent side="right" className="w-[85%] max-w-sm">
         <SheetHeader className="border-b">
-          <SheetTitle>Valtrex Markets</SheetTitle>
+          <SheetTitle>Emmy Capital</SheetTitle>
           <SheetDescription>{DEMO_NOTICE}</SheetDescription>
         </SheetHeader>
         <nav aria-label="Mobile" className="px-2">

@@ -45,7 +45,7 @@ export default function AccountsPage() {
           <div className="rounded-2xl border bg-card p-6">
             <h2 className="text-lg font-semibold text-foreground">No regulatory claims</h2>
             <p className="mt-2">
-              Valtrex Markets is not a company and holds no licence, authorisation or registration
+              Emmy Capital is not a company and holds no licence, authorisation or registration
               anywhere. A real broker&apos;s account page would include its regulatory details and
               full cost disclosures.
             </p>

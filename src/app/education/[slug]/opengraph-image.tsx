@@ -1,7 +1,7 @@
 import { ARTICLES, getArticle } from "@/data/articles";
 import { brandImage, OG_SIZE } from "@/lib/og/brand-image";
 
-export const alt = "Valtrex Markets education guide (fictional demo)";
+export const alt = "Emmy Capital education guide (fictional demo)";
 export const size = OG_SIZE;
 export const contentType = "image/png";
 
