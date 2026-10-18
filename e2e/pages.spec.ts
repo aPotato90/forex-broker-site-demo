@@ -43,7 +43,7 @@ for (const route of ROUTES) {
       );
       await expect(page.locator("footer")).toContainText(DEMO_NOTICE);
       await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
-      await expect(page).toHaveTitle(/Valtrex Markets/);
+      await expect(page).toHaveTitle(/Emmy Capital/);
 
       await scrollThrough(page);
 
@@ -94,4 +94,54 @@ test("unknown routes render the custom 404", async ({ page }) => {
   expect(response?.status()).toBe(404);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("This page went off the chart");
   await expect(page.getByRole("complementary", { name: "Demo notice" })).toBeVisible();
+});
+
+test("brand name and initials are consistent across the site", async ({ page, request }) => {
+  await page.goto("/legal");
+  await expect(page.getByRole("banner").getByRole("link").first()).toHaveText(
+    /Emmy Capital\s*Fictional demo/,
+  );
+  await expect(page.locator("footer")).toContainText("Emmy Capital");
+  await expect(page.locator("main")).toContainText("Emmy Capital is a fictional brand");
+  await expect(page).toHaveTitle(/\| Emmy Capital \(demo\)$/);
+
+  const ogTitle = await page.locator('meta[property="og:title"]').getAttribute("content");
+  expect(ogTitle).toContain("Emmy Capital");
+  const siteName = await page.locator('meta[property="og:site_name"]').getAttribute("content");
+  expect(siteName).toBe("Emmy Capital (fictional demo)");
+
+  const jsonLd = JSON.parse(
+    (await page.locator('script[type="application/ld+json"]').textContent()) ?? "{}",
+  );
+  expect(jsonLd).toMatchObject({ "@type": "WebSite", name: "Emmy Capital (fictional demo)" });
+
+  // Generated images (favicon, apple icon, social cards) are served as PNGs.
+  for (const path of [
+    "/icon",
+    "/apple-icon",
+    "/opengraph-image",
+    "/education/order-types/opengraph-image",
+  ]) {
+    const response = await request.get(path);
+    expect(response.status(), path).toBe(200);
+    expect(response.headers()["content-type"], path).toContain("image/png");
+  }
+  const ogAlt = await page.locator('meta[property="og:image:alt"]').getAttribute("content");
+  expect(ogAlt).toContain("Emmy Capital");
+
+  // Every page shares a social image; articles use their own generated card.
+  for (const [route, image] of [
+    ["/", "/opengraph-image"],
+    ["/markets", "/opengraph-image"],
+    ["/education", "/opengraph-image"],
+    ["/education/order-types", "/education/order-types/opengraph-image"],
+  ]) {
+    await page.goto(route);
+    const og = await page.locator('meta[property="og:image"]').first().getAttribute("content");
+    expect(new URL(og ?? "").pathname, route).toBe(image);
+    await expect(page.locator('meta[name="twitter:image"]').first(), route).toHaveAttribute(
+      "content",
+      new RegExp(image.replace(/\//g, "\\/")),
+    );
+  }
 });
