@@ -24,6 +24,7 @@ export default function AccountsPage() {
       />
       <Section className="pt-10 sm:pt-12 lg:pt-14">
         <RiskWarning className="mb-10" />
+        <h2 className="sr-only">Compare account types</h2>
         <PricingTable />
         <div className="mt-10 grid gap-6 text-sm text-muted-foreground md:grid-cols-2">
           <div className="rounded-2xl border bg-card p-6">

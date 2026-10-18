@@ -30,7 +30,6 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn("inline-flex items-center gap-2.5 rounded-lg font-heading", className)}
-      aria-label="Valtrex Markets (fictional demo) home"
     >
       <LogoMark />
       <span className="flex flex-col leading-none">

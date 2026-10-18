@@ -166,7 +166,7 @@ export function MarketsTable() {
         role="region"
         aria-label="Simulated instruments table (scrolls horizontally on small screens)"
         tabIndex={0}
-        className="overflow-x-auto focus-visible:outline-offset-[-2px]"
+        className="relative overflow-x-auto focus-visible:outline-offset-[-2px]"
       >
         <table className="w-full min-w-[640px] text-sm">
           <caption className="sr-only">

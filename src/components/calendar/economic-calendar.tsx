@@ -169,7 +169,7 @@ export function EconomicCalendar() {
                 role="region"
                 aria-label={`Sample events, ${relativeDayLabel(offset)}`}
                 tabIndex={0}
-                className="overflow-x-auto"
+                className="relative overflow-x-auto"
               >
                 <table className="w-full min-w-[600px] text-sm">
                   <thead className="sr-only">

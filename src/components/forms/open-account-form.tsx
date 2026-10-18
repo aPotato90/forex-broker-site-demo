@@ -2,7 +2,7 @@
 
 import { CheckIcon, CircleCheckBigIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type UseFormRegister } from "react-hook-form";
 import { z } from "zod";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
@@ -71,7 +71,7 @@ function RadioCards({
   legend: string;
   options: readonly { value: string; label: string; description?: string }[];
   error?: string;
-  register: ReturnType<typeof useForm<FormInput>>["register"];
+  register: (name: keyof FormInput) => ReturnType<UseFormRegister<FormInput>>;
 }) {
   const errorId = `${name}-error`;
   return (
@@ -121,6 +121,15 @@ export function OpenAccountForm() {
     },
   });
   const { errors } = form.formState;
+
+  // Steps are validated with trigger() rather than submit, so RHF's post-submit re-validation
+  // never kicks in. Re-check a field on change once it shows an error, so it clears when fixed.
+  const field = (name: keyof FormInput) =>
+    form.register(name, {
+      onChange: () => {
+        if (form.getFieldState(name).error) void form.trigger(name);
+      },
+    });
 
   // Move focus to the new step's heading so keyboard and screen reader users keep their place.
   useEffect(() => {
@@ -233,14 +242,14 @@ export function OpenAccountForm() {
                 label="First name"
                 autoComplete="given-name"
                 error={errors.firstName?.message}
-                {...form.register("firstName")}
+                {...field("firstName")}
               />
               <TextField
                 id="lastName"
                 label="Last name"
                 autoComplete="family-name"
                 error={errors.lastName?.message}
-                {...form.register("lastName")}
+                {...field("lastName")}
               />
               <TextField
                 id="email"
@@ -249,14 +258,14 @@ export function OpenAccountForm() {
                 autoComplete="email"
                 hint="Use any address; it is never sent anywhere."
                 error={errors.email?.message}
-                {...form.register("email")}
+                {...field("email")}
               />
               <SelectField
                 id="country"
                 label="Country of residence"
                 options={COUNTRIES.map((c) => ({ value: c, label: c }))}
                 error={errors.country?.message}
-                {...form.register("country")}
+                {...field("country")}
               />
             </div>
           )}
@@ -268,7 +277,7 @@ export function OpenAccountForm() {
                 legend="Trading experience"
                 options={EXPERIENCE}
                 error={errors.experience?.message}
-                register={form.register}
+                register={field}
               />
               <RadioCards
                 name="accountType"
@@ -279,7 +288,7 @@ export function OpenAccountForm() {
                   description: `Spreads from ${t.spreadFrom} (example)`,
                 }))}
                 error={errors.accountType?.message}
-                register={form.register}
+                register={field}
               />
               <div className="grid gap-5 sm:grid-cols-2">
                 <SelectField
@@ -287,7 +296,7 @@ export function OpenAccountForm() {
                   label="Base currency"
                   options={["USD", "EUR", "GBP"].map((c) => ({ value: c, label: c }))}
                   error={errors.baseCurrency?.message}
-                  {...form.register("baseCurrency")}
+                  {...field("baseCurrency")}
                 />
                 <SelectField
                   id="virtualBalance"
@@ -299,7 +308,7 @@ export function OpenAccountForm() {
                     { value: "50000", label: "50,000" },
                   ]}
                   error={errors.virtualBalance?.message}
-                  {...form.register("virtualBalance")}
+                  {...field("virtualBalance")}
                 />
               </div>
             </div>
@@ -338,7 +347,7 @@ export function OpenAccountForm() {
                       aria-invalid={errors.acknowledge ? true : undefined}
                       aria-describedby={describedBy}
                       className="mt-0.5 size-5 shrink-0 accent-[var(--brand)]"
-                      {...form.register("acknowledge")}
+                      {...field("acknowledge")}
                     />
                     I understand this is a demo website: no account will be created and nothing I
                     entered will be submitted or stored.
@@ -358,11 +367,11 @@ export function OpenAccountForm() {
             <span />
           )}
           {step < STEPS.length - 1 ? (
-            <Button type="button" size="lg" onClick={next}>
+            <Button key="continue" type="button" size="lg" onClick={next}>
               Continue
             </Button>
           ) : (
-            <Button type="submit" size="lg">
+            <Button key="finish" type="submit" size="lg">
               Finish demo sign-up
             </Button>
           )}

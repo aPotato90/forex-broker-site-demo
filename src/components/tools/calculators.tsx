@@ -535,10 +535,10 @@ export function ProfitLossCalculator() {
             {(["buy", "sell"] as const).map((d) => (
               <label
                 key={d}
-                className="flex cursor-pointer items-center justify-center rounded-md text-sm font-medium capitalize has-checked:bg-background has-checked:shadow-sm has-focus-visible:outline-2 has-focus-visible:outline-ring"
+                className="flex cursor-pointer items-center justify-center rounded-md text-sm font-medium has-checked:bg-background has-checked:shadow-sm has-focus-visible:outline-2 has-focus-visible:outline-ring"
               >
                 <input type="radio" value={d} className="sr-only" {...form.register("direction")} />
-                {d}
+                {d === "buy" ? "Buy" : "Sell"}
               </label>
             ))}
           </div>

@@ -56,7 +56,7 @@ export function PricingTable() {
         role="region"
         aria-labelledby="comparison-caption"
         tabIndex={0}
-        className="overflow-x-auto rounded-2xl border bg-card text-card-foreground"
+        className="relative overflow-x-auto rounded-2xl border bg-card text-card-foreground"
       >
         <table className="w-full min-w-[640px] text-sm">
           <caption id="comparison-caption" className="p-5 text-left">
